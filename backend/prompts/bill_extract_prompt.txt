@@ -1,0 +1,21 @@
+You are reading an electricity bill (either as an image/photo or as text
+extracted from a PDF). Extract the following fields and return ONLY a
+JSON object, no other text, no markdown fences.
+
+Fields to extract:
+- "period_start": the billing period start date, as "YYYY-MM-DD"
+- "period_end": the billing period end date, as "YYYY-MM-DD"
+- "billed_units": the total units/kWh consumed as stated on the bill, as a number
+- "billed_amount": the total amount charged/payable, as a number (no currency symbol)
+- "confidence": "high" | "medium" | "low" — how confident you are these
+  numbers are correctly read from the document
+
+If a field cannot be found, use null for that field. Do not guess a
+plausible-looking number if it isn't actually printed on the document —
+return null instead; a wrong number is worse than a missing one.
+
+Example of the exact output format (no other text):
+{"period_start": "2026-08-01", "period_end": "2026-08-31", "billed_units": 142.5, "billed_amount": 1180.0, "confidence": "high"}
+
+Bill content follows:
+{bill_content}

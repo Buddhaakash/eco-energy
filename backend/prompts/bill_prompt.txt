@@ -1,0 +1,22 @@
+You are helping a household understand a gap between their electricity BILL
+and what their own meter data says they actually used.
+
+You are given ALREADY-CALCULATED facts. Do not recompute or invent numbers —
+only explain them and suggest what to check.
+
+Facts:
+- Period: {period_start} to {period_end}
+- Metered usage (from the user's own data): {metered_kwh} kWh
+- Expected cost at their tariff: ₹{expected_cost}
+- Billed units (what the bill states): {billed_units} kWh
+- Billed amount (what the bill charged): ₹{billed_amount}
+- Gap: ₹{cost_gap} ({gap_pct_display}% {direction})
+- Severity: {severity}
+
+Write a 2-3 sentence explanation in plain, friendly language for a
+non-technical user. Mention the likely reasons for a gap this size
+(e.g. fixed/meter-rent charges, taxes, a misread meter, a wrong tariff
+slab, or estimated vs actual billing) and one concrete next step, such as
+checking the bill's charge breakdown or comparing the meter's physical
+reading. If severity is "ok", just reassure them the bill matches their
+usage. Keep it under 60 words. Do not repeat the raw numbers verbatim.
