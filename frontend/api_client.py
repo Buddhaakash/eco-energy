@@ -14,8 +14,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_URL = os.getenv("API_URL", "http://localhost:8000")
-
+API_URL = os.getenv(
+    "API_URL",
+    "https://eco-energy-m65z.onrender.com"
+).rstrip("/")
 
 def _get(path: str, params: dict | None = None) -> dict | list:
     r = httpx.get(f"{API_URL}{path}", params=params, timeout=30)
